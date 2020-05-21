@@ -1,5 +1,11 @@
-Face Recognition using Matlab
+# Face Recognition using Matlab via HOG, SURF and CNN
 
+Hi! The models for this project are not made avaiable due to the data sensitivity. However, it is possible to create your own models by feeding in the data into (photos folder), preprocessing the images processedFaces and GrayFaces), then run the relevant script to create your own models.  
+This face recognition works both on individual images and a group photos, do watch out for false positives. 
+
+![Small example](https://i.ibb.co/yqkX6rr/example.png)
+
+### How to run
 1. Matlab has a prefence to output values in exponentials
 hence run "format shortG" first. 
 
@@ -24,22 +30,18 @@ Valid arguement is RecogniseFace("testset/01/1IMG_6820.png", "", "CNN")
 
 The other functions and their usuage:
 
-----Classifier scripts:
+### Classifier scripts:
 
 alexnetClassifier.m, hog.m, surf.m = where classifier (and featureTypes excluding CNN) 
 are used to build, train a model and then save it locally. To Run these scripts, make sure to update the location of the dataset.
 
--- testCNN.m, testHOG.m, testSURF.m = where classifer (and featuresTypes excluding CNN) 
+###testCNN.m, testHOG.m, testSURF.m = where classifer (and featuresTypes excluding CNN) 
 use models that were saved and uses them against new data. 
 
 ---
 surfModel.mat, hogModel.mat, alexCNNModel.mat are all classifiers that are loaded at each query. Hence, expect a slight delay (especially for hog)
 
-
-
-
-
----Other scripts:
+### Other scripts:
 
 processFormats.m = the main script to handle all the processing, so that it is automated
 
@@ -50,10 +52,7 @@ toGray.m = converts all RBG images in /croppedFaces into grayscale and saves the
 fixRotation.m = fixes a recognized issue with different Matab/OS changing
 photos in a different rotation when including it to the project.
 
-
----Others
+### Others
 Photos = pictures of individual students into their separate folders
 processedFaces = cropped faces from Photos
 grayFaces = gayscale of processedFaces
-
-
